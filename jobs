@@ -1,4 +1,4 @@
-job('DSL-SCM') {
+job('DSL-CI') {
     description('My first job')
     parameters {
         booleanParam('FLAG', true)
@@ -17,3 +17,22 @@ job('DSL-SCM') {
     }
  
     }
+
+
+job('DSL-CD') {
+    description('My first job')
+    parameters {
+        booleanParam('FLAG', true)
+        choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
+    }
+    
+    steps {
+        shell("""
+		'echo Hello World'
+		'echo second line'
+		'echo third linr'
+              """
+        ) 
+    }
+ 
+    }    
