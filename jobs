@@ -1,0 +1,19 @@
+job('DSL-SCM') {
+    description('My first job')
+    parameters {
+        booleanParam('FLAG', true)
+        choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
+    }
+    scm {
+        git('https://github.com/bipin937/jenkinsWiz', 'master')
+    }
+    steps {
+        shell("""
+		'echo Hello World'
+		'echo second line'
+		'echo third linr'
+              """
+        ) 
+    }
+ 
+    }
