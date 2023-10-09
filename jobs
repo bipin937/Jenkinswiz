@@ -7,13 +7,8 @@ job('DSL-CI') {
     scm {
         git('https://github.com/bipin937/jenkinsWiz', 'master')
     }
-    steps {
-        shell("""
-		'echo Hello World'
-		'echo second line'
-		'echo third linr'
-              """
-        ) 
+    triggers{
+        cron('H/2 * * * *')
     }
  
     }
